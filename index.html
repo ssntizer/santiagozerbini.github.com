@@ -4,119 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santiago Zerbini – Portfolio</title>
-<style>
-  /* GENERAL */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f7fa;
-    color: #333;
-  }
-  a { text-decoration: none; color: #1d4ed8; }
-  a:hover { text-decoration: underline; }
-
-  /* HEADER */
-  header {
-    background: linear-gradient(to right, #1e3a8a, #2563eb, #3b82f6);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-  }
-  header h1 { font-size: 3rem; margin: 0; }
-  header p { font-size: 1.2rem; margin: 10px 0 20px; }
-  .header-buttons a {
-    background: white;
-    color: #1e3a8a;
-    padding: 12px 24px;
-    border-radius: 8px;
-    margin: 0 10px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .header-buttons a:hover {
-    background: #e5e7eb;
-  }
-
-  /* SECTIONS */
-  section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-  section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #1e40af; }
-  section p { font-size: 1.1rem; line-height: 1.6; }
-
-  /* SKILLS GRID */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 20px;
-  }
-  .skill-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  }
-  .skill-card i {
-    font-size: 2.5rem;
-    color: #1e3a8a;
-    margin-bottom: 10px;
-  }
-
-  /* PROJECTS GRID */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 20px;
-  }
-  .project-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  }
-  .project-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: #1e40af; }
-  .project-card p { margin-bottom: 10px; }
-  .project-card a.button {
-    display: inline-block;
-    background: #1e3a8a;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .project-card a.button:hover { background: #2563eb; }
-
-  /* CONTACT */
-  #contact { background: linear-gradient(to right, #1e3a8a, #2563eb); color: white; }
-  #contact a { color: white; font-weight: bold; }
-  #contact a:hover { text-decoration: underline; }
-
-  /* FOOTER */
-  footer {
-    background: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-
-  /* RESPONSIVE */
-  @media(max-width: 600px) {
-    header h1 { font-size: 2.5rem; }
-    section h2 { font-size: 2rem; }
-  }
-</style>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -141,14 +29,38 @@
 <section id="skills">
   <h2>Habilidades Técnicas</h2>
   <div class="skills-grid">
-    <div class="skill-card"><i class="fas fa-code"></i><h3>PHP / CodeIgniter 4</h3></div>
-    <div class="skill-card"><i class="fas fa-database"></i><h3>MySQL / Queries Optimized</h3></div>
-    <div class="skill-card"><i class="fas fa-microchip"></i><h3>MicroPython / ESP32</h3></div>
-    <div class="skill-card"><i class="fas fa-network-wired"></i><h3>MQTT / HTTPS / GSM</h3></div>
-    <div class="skill-card"><i class="fab fa-docker"></i><h3>Docker / Render</h3></div>
-    <div class="skill-card"><i class="fas fa-lock"></i><h3>TLS / SSL / Seguridad</h3></div>
-    <div class="skill-card"><i class="fas fa-laptop-code"></i><h3>HTML / CSS / JavaScript</h3></div>
-    <div class="skill-card"><i class="fas fa-vial"></i><h3>APIs / PayPal Sandbox</h3></div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><path d="M8 12h48v40H8z"/></svg>
+      <h3>PHP / CodeIgniter 4</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><path d="M32 4l28 16v24L32 60 4 44V20z"/></svg>
+      <h3>MySQL / Queries Optimized</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/></svg>
+      <h3>MicroPython / ESP32</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><path d="M8 32h48"/></svg>
+      <h3>MQTT / HTTPS / GSM</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48"/></svg>
+      <h3>Docker / Render</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><path d="M16 16h32v32H16z"/></svg>
+      <h3>TLS / SSL / Seguridad</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><path d="M8 8h48v48H8z"/></svg>
+      <h3>HTML / CSS / JavaScript</h3>
+    </div>
+    <div class="skill-card">
+      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/></svg>
+      <h3>APIs / PayPal Sandbox</h3>
+    </div>
   </div>
 </section>
 
