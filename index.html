@@ -1,113 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santiago Zerbini – Portfolio</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  /* GENERAL */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+  }
+  a { text-decoration: none; color: #1d4ed8; }
+  a:hover { text-decoration: underline; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(to right, #1e3a8a, #2563eb, #3b82f6);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  header h1 { font-size: 3rem; margin: 0; }
+  header p { font-size: 1.2rem; margin: 10px 0 20px; }
+  .header-buttons a {
+    background: white;
+    color: #1e3a8a;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .header-buttons a:hover {
+    background: #e5e7eb;
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+  section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #1e40af; }
+  section p { font-size: 1.1rem; line-height: 1.6; }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+  }
+  .skill-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .skill-card i {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+  }
+
+  /* PROJECTS GRID */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+  }
+  .project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .project-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: #1e40af; }
+  .project-card p { margin-bottom: 10px; }
+  .project-card a.button {
+    display: inline-block;
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .project-card a.button:hover { background: #2563eb; }
+
+  /* CONTACT */
+  #contact { background: linear-gradient(to right, #1e3a8a, #2563eb); color: white; }
+  #contact a { color: white; font-weight: bold; }
+  #contact a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width: 600px) {
+    header h1 { font-size: 2.5rem; }
+    section h2 { font-size: 2rem; }
+  }
+</style>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
 <!-- HEADER -->
-<header class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white p-12 text-center shadow-lg">
-  <h1 class="text-5xl font-bold mb-2">Santiago Zerbini</h1>
-  <p class="text-xl">Backend & IoT Developer</p>
-  <div class="mt-6 flex justify-center gap-4">
-    <a href="#projects" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">Ver Proyectos</a>
-    <a href="#contact" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">Contacto</a>
+<header>
+  <h1>Santiago Zerbini</h1>
+  <p>Backend & IoT Developer</p>
+  <div class="header-buttons">
+    <a href="#projects">Ver Proyectos</a>
+    <a href="#contact">Contacto</a>
   </div>
 </header>
 
 <!-- ABOUT ME -->
-<section id="about" class="py-16 px-6 md:px-20 max-w-5xl mx-auto">
-  <h2 class="text-4xl font-bold mb-6 text-blue-900 text-center">Sobre Mí</h2>
-  <p class="text-lg mb-4 text-center">
-    Soy Técnico en Informática y estudiante de Ingeniería en Computación en la Universidad Nacional de Córdoba.
-    Apasionado por desarrollo backend, IoT embebido y despliegues seguros en la nube.
-    Experiencia en proyectos full-stack, optimización de bases de datos y firmware para ESP32.
-  </p>
-  <p class="text-lg text-center">
-    Busco aplicar mis habilidades en roles IT, remotos o basados en Córdoba, contribuyendo con soluciones escalables, seguras y eficientes.
-  </p>
+<section id="about">
+  <h2>Sobre Mí</h2>
+  <p>Soy Técnico en Informática y estudiante de Ingeniería en Computación en la Universidad Nacional de Córdoba. Apasionado por desarrollo backend, IoT embebido y despliegues seguros en la nube. Experiencia en proyectos full-stack, optimización de bases de datos y firmware para ESP32.</p>
+  <p>Busco aplicar mis habilidades en roles IT, remotos o basados en Córdoba, contribuyendo con soluciones escalables, seguras y eficientes.</p>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="py-16 px-6 md:px-20 bg-gradient-to-r from-gray-100 to-gray-200">
-  <h2 class="text-4xl font-bold mb-12 text-blue-900 text-center">Habilidades Técnicas</h2>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-code fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">PHP / CodeIgniter 4</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-database fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">MySQL / Queries Optimized</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-microchip fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">MicroPython / ESP32</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-network-wired fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">MQTT / HTTPS / GSM</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fab fa-docker fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">Docker / Render</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-lock fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">TLS / SSL / Seguridad</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-laptop-code fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">HTML / CSS / JavaScript</h3>
-    </div>
-    <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:scale-105 transform transition">
-      <i class="fas fa-vial fa-3x text-blue-600 mb-4"></i>
-      <h3 class="font-semibold text-lg">APIs / PayPal Sandbox</h3>
-    </div>
+<section id="skills">
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><i class="fas fa-code"></i><h3>PHP / CodeIgniter 4</h3></div>
+    <div class="skill-card"><i class="fas fa-database"></i><h3>MySQL / Queries Optimized</h3></div>
+    <div class="skill-card"><i class="fas fa-microchip"></i><h3>MicroPython / ESP32</h3></div>
+    <div class="skill-card"><i class="fas fa-network-wired"></i><h3>MQTT / HTTPS / GSM</h3></div>
+    <div class="skill-card"><i class="fab fa-docker"></i><h3>Docker / Render</h3></div>
+    <div class="skill-card"><i class="fas fa-lock"></i><h3>TLS / SSL / Seguridad</h3></div>
+    <div class="skill-card"><i class="fas fa-laptop-code"></i><h3>HTML / CSS / JavaScript</h3></div>
+    <div class="skill-card"><i class="fas fa-vial"></i><h3>APIs / PayPal Sandbox</h3></div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-16 px-6 md:px-20 max-w-6xl mx-auto">
-  <h2 class="text-4xl font-bold mb-12 text-blue-900 text-center">Proyectos Destacados</h2>
-  <div class="grid md:grid-cols-2 gap-10">
-    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
-      <h3 class="text-2xl font-bold mb-4 text-blue-800">E-Skate</h3>
-      <p class="mb-2">Plataforma IoT full-stack para monitoreo remoto de skateboards eléctricos, con comunicación segura y gestión de dispositivos.</p>
-      <p class="mb-2 font-semibold">Tecnologías: PHP, CodeIgniter 4, MySQL, MicroPython, ESP32, Docker, TLS, PayPal Sandbox</p>
-      <p class="mb-4">Features: Dashboard en tiempo real, mapa de trayectoria, administración de dispositivos, PWA instalable, optimización de energía</p>
-      <a href="https://github.com/ssntizer/eskate/tree/prototipo-render" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700 transition">Ver repositorio</a>
+<section id="projects">
+  <h2>Proyectos Destacados</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>E-Skate</h3>
+      <p>Plataforma IoT full-stack para monitoreo remoto de skateboards eléctricos, con comunicación segura y gestión de dispositivos.</p>
+      <p><strong>Tecnologías:</strong> PHP, CodeIgniter 4, MySQL, MicroPython, ESP32, Docker, TLS, PayPal Sandbox</p>
+      <p><strong>Features:</strong> Dashboard en tiempo real, mapa de trayectoria, administración de dispositivos, PWA instalable, optimización de energía</p>
+      <a href="https://github.com/ssntizer/eskate/tree/prototipo-render" class="button" target="_blank">Ver repositorio</a>
     </div>
-
-    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition">
-      <h3 class="text-2xl font-bold mb-4 text-blue-800">Prototipos IoT / APIs</h3>
-      <p class="mb-2">Experimentos con APIs, sensores y comunicación en tiempo real con ESP32 y MicroPython, enfocado en eficiencia y seguridad.</p>
-      <p class="mb-2 font-semibold">Tecnologías: Python, MQTT, JSON, REST APIs</p>
-      <a href="https://github.com/ssntizer" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded font-semibold hover:bg-blue-700 transition">Ver más proyectos</a>
+    <div class="project-card">
+      <h3>Prototipos IoT / APIs</h3>
+      <p>Experimentos con APIs, sensores y comunicación en tiempo real con ESP32 y MicroPython, enfocado en eficiencia y seguridad.</p>
+      <p><strong>Tecnologías:</strong> Python, MQTT, JSON, REST APIs</p>
+      <a href="https://github.com/ssntizer" class="button" target="_blank">Ver más proyectos</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-16 px-6 md:px-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white">
-  <h2 class="text-4xl font-bold mb-8 text-center">Contacto</h2>
-  <div class="max-w-3xl mx-auto text-center space-y-4 text-lg">
-    <p>Email: <a href="mailto:santizerbini3@gmail.com" class="underline">santizerbini3@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/ssntizer" target="_blank" class="underline">https://github.com/ssntizer</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/santiago-zerbini-913199340/" target="_blank" class="underline">https://www.linkedin.com/in/santiago-zerbini-913199340/</a></p>
-    <p class="mt-4">Abierto a roles junior, remotos o freelance en Backend / IoT / DevOps</p>
-  </div>
+<section id="contact">
+  <h2>Contacto</h2>
+  <p>Email: <a href="mailto:santizerbini3@gmail.com">santizerbini3@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/ssntizer" target="_blank">https://github.com/ssntizer</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/santiago-zerbini-913199340/" target="_blank">https://www.linkedin.com/in/santiago-zerbini-913199340/</a></p>
+  <p>Abierto a roles junior, remotos o freelance en Backend / IoT / DevOps</p>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-800 text-white p-6 text-center">
+<footer>
   © 2026 Santiago Zerbini – Todos los derechos reservados
 </footer>
 
 </body>
 </html>
-
